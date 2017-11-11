@@ -36,7 +36,8 @@ def special(incoming):
         body = laundry.special
     elif incoming.upper() == "WEATHER":
         body = weather.special
-    elif incoming.upper() == "UNIVERSITY"
+    elif incoming.upper() == "UNIVERSITY":
+        body = university.special
     elif incoming.upper() == "DEMO":
         ## welcome/instructions
         body = 'Thanks for using Harvard Now!\n'
