@@ -3,10 +3,10 @@ import re
 from bs4 import BeautifulSoup
 
 #############################
-##    Weather Function     ##
+##    University Function     ##
 #############################
 
-def getSchool(input):
+def getUniversity(input):
     url = 'http://www.google.com/search?q='
     url += '+'.join(input)
     hdr = {'User-Agent': 'Chrome'}
@@ -36,11 +36,11 @@ def getSchool(input):
 ############################
 
 def makeSpecial():
-    s = 'To get a university for a particular city, use the format \'university city\'.'
+    s = 'To get a university in a particular city, use the format \'university city\'.'
     return s
 
 ## return proper format to use for getting weather
 special = makeSpecial()
 
 def eval(input):
-    return getSchool(input)
+    return getUniversity(input)
