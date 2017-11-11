@@ -12,12 +12,15 @@ def filter(tag,cmds=data.box):
 ## evaluates a given command to a string by delegating to the proper service
 def eval(cmd, input=None):
     s = ""
+    
     if cmd['service'] == 'L': ## Laundry
         return laundry.eval(cmd['args'])
     elif cmd['service'] == 'S': ## Shuttle
         return shuttle.eval(cmd['args'])
     elif cmd['service'] == 'W': ## Weather
         return weather.eval(input)
+    elif cmd['service'] == "U": ## Schools
+        return university.eval(input)
     else:
         return "ERROR 42: service not recognized"
 
@@ -33,6 +36,7 @@ def special(incoming):
         body = laundry.special
     elif incoming.upper() == "WEATHER":
         body = weather.special
+    elif incoming.upper() == "UNIVERSITY"
     elif incoming.upper() == "DEMO":
         ## welcome/instructions
         body = 'Thanks for using Harvard Now!\n'
